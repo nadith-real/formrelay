@@ -108,6 +108,10 @@
 **/.env
 **/.env.local
 **/.env.*.local
+
+# FormRelay data
+/data/
+*.db
 *.pem
 *.key
 

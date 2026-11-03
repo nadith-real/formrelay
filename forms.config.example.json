@@ -1,0 +1,17 @@
+{
+  "forms": [
+    {
+      "name": "Contact Form",
+      "endpointSlug": "contact",
+      "enabled": true,
+      "allowedOrigins": ["https://example.com"],
+      "redirectUrl": "https://example.com/thanks",
+      "successMessage": "Thanks for your message.",
+      "honeypotField": "_gotcha",
+      "validationConfig": {
+        "required": ["name", "email"],
+        "emailFields": ["email"]
+      }
+    }
+  ]
+}

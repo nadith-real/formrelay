@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FormRelay demo form</title>
+    <style>
+      body { font-family: Montserrat, system-ui, sans-serif; max-width: 480px; margin: 48px auto; color: #171717; }
+      label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 6px; }
+      input, textarea { width: 100%; padding: 10px; border: 1px solid #EAEAEA; border-radius: 8px; font: inherit; }
+      button { margin-top: 16px; background: #2563EB; color: #fff; border: 0; border-radius: 8px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+      .hint { color: #737373; font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <h1>Demo contact form</h1>
+    <p class="hint">Replace SLUG with a form endpoint slug from the dashboard, then submit.</p>
+    <form action="/f/SLUG" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" required />
+      <label>Email</label>
+      <input type="email" name="email" required />
+      <label>Message</label>
+      <textarea name="message" rows="4"></textarea>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

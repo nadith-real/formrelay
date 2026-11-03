@@ -1,0 +1,20 @@
+services:
+  formrelay:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      APP_USERNAME: ${APP_USERNAME}
+      APP_PASSWORD: ${APP_PASSWORD}
+      APP_SECRET: ${APP_SECRET}
+      APP_URL: ${APP_URL:-http://localhost:3001}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      DATABASE_URL: file:./data/formrelay.db
+      PORT: 3001
+      NODE_ENV: production
+    volumes:
+      - formrelay-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  formrelay-data:
