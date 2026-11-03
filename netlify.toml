@@ -5,10 +5,12 @@
 
 # These variables hold non-sensitive tuning values (numbers, public URL) that also
 # appear as defaults in source and .env.example. Exclude them from secrets scanning
-# so their values aren't flagged. Real secrets (APP_PASSWORD, APP_SECRET,
-# ENCRYPTION_KEY, DATABASE_URL) remain scanned.
+# so their values aren't flagged. DATABASE_URL is included because it holds a
+# connection location (default "file:./data/formrelay.db", documented in source),
+# not a credential. Real secrets (APP_USERNAME, APP_PASSWORD, APP_SECRET,
+# ENCRYPTION_KEY) remain scanned.
 [build.environment]
-  SECRETS_SCAN_OMIT_KEYS = "LOGIN_RATE_WINDOW_MS,LOGIN_RATE_LIMIT,SESSION_TTL_HOURS,MAX_BODY_BYTES,PORT,APP_URL"
+  SECRETS_SCAN_OMIT_KEYS = "LOGIN_RATE_WINDOW_MS,LOGIN_RATE_LIMIT,SESSION_TTL_HOURS,MAX_BODY_BYTES,PORT,APP_URL,DATABASE_URL"
 
 [[redirects]]
   from = "/api/*"
