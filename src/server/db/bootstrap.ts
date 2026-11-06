@@ -1,4 +1,4 @@
-import { getClient } from "./client.ts";
+import { getClient } from "./client";
 
 const STATEMENTS = [
   `CREATE TABLE IF NOT EXISTS projects (

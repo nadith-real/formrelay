@@ -2,8 +2,8 @@ import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import { createClient, type Client } from "@libsql/client";
 import { drizzle, type LibSQLDatabase } from "drizzle-orm/libsql";
-import * as schema from "./schema.ts";
-import { loadConfig } from "../core/config.ts";
+import * as schema from "./schema";
+import { loadConfig } from "../core/config";
 
 export type Database = LibSQLDatabase<typeof schema>;
 

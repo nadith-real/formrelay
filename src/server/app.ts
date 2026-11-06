@@ -1,14 +1,14 @@
 import { Hono } from "hono";
 import { secureHeaders } from "hono/secure-headers";
-import { authRoutes } from "./auth/auth.routes.ts";
-import { requireAuth, requireCsrf } from "./auth/middleware.ts";
-import { projectRoutes } from "./projects/project.routes.ts";
-import { formRoutes } from "./forms/form.routes.ts";
-import { submissionRoutes } from "./submissions/submission.routes.ts";
-import { analyticsRoutes } from "./analytics/analytics.routes.ts";
-import { handleOptions, processSubmission } from "./core/processor.ts";
-import { jsonError } from "./core/response.ts";
-import { loadConfig } from "./core/config.ts";
+import { authRoutes } from "./auth/auth.routes";
+import { requireAuth, requireCsrf } from "./auth/middleware";
+import { projectRoutes } from "./projects/project.routes";
+import { formRoutes } from "./forms/form.routes";
+import { submissionRoutes } from "./submissions/submission.routes";
+import { analyticsRoutes } from "./analytics/analytics.routes";
+import { handleOptions, processSubmission } from "./core/processor";
+import { jsonError } from "./core/response";
+import { loadConfig } from "./core/config";
 
 export function createApp() {
   const app = new Hono();
