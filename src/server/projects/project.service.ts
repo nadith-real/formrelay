@@ -1,7 +1,7 @@
 import { eq, desc } from "drizzle-orm";
-import { db } from "../db/client.ts";
-import { forms, projects, projectIntegrations, projectSettings, submissions } from "../db/schema.ts";
-import { newId, now } from "../core/ids.ts";
+import { db } from "../db/client";
+import { forms, projects, projectIntegrations, projectSettings, submissions } from "../db/schema";
+import { newId, now } from "../core/ids";
 
 export async function listProjects() {
   return db.select().from(projects).orderBy(desc(projects.createdAt));

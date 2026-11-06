@@ -1,7 +1,7 @@
 import { and, desc, eq, gte, inArray, lte, like, or, sql } from "drizzle-orm";
-import { db } from "../db/client.ts";
-import { forms, notificationLogs, submissions } from "../db/schema.ts";
-import { newId, now } from "../core/ids.ts";
+import { db } from "../db/client";
+import { forms, notificationLogs, submissions } from "../db/schema";
+import { newId, now } from "../core/ids";
 
 export type SubmissionStatus = "unread" | "read" | "spam";
 
