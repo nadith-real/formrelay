@@ -1,27 +1,10 @@
+import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import { loadEnvFile } from "../src/server/core/env";
-import { bootstrapSchema } from "../src/server/db/bootstrap";
-import { createApp } from "../src/server/app";
 
-loadEnvFile();
+const app = new Hono();
 
-let bootstrapped = false;
-async function ensureBootstrap() {
-  if (bootstrapped) return;
-  await bootstrapSchema();
-  bootstrapped = true;
-}
-
-const app = createApp();
-
-app.use("*", async (c, next) => {
-  try {
-    await ensureBootstrap();
-  } catch (err) {
-    console.error("Schema bootstrap failed:", err);
-  }
-  return next();
-});
+app.get("/api/health", (c) => c.json({ ok: true, name: "FormRelay", mode: "minimal" }));
+app.all("*", (c) => c.json({ error: "not found in minimal handler" }, 404));
 
 const handler = handle(app);
 
