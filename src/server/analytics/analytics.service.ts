@@ -1,6 +1,6 @@
 import { and, eq, gte, inArray, lte, sql } from "drizzle-orm";
-import { db } from "../db/client.ts";
-import { forms, submissions } from "../db/schema.ts";
+import { db } from "../db/client";
+import { forms, submissions } from "../db/schema";
 
 export type DateRange = { from: Date; to: Date };
 

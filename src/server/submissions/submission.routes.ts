@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { z } from "zod";
-import { jsonError, jsonOk } from "../core/response.ts";
-import { getProject } from "../projects/project.service.ts";
+import { jsonError, jsonOk } from "../core/response";
+import { getProject } from "../projects/project.service";
 import {
   bulkDeleteSubmissions,
   deleteSubmission,
@@ -9,7 +9,7 @@ import {
   listSubmissions,
   toCsv,
   updateSubmissionStatus,
-} from "./submission.service.ts";
+} from "./submission.service";
 
 export const submissionRoutes = new Hono();
 
