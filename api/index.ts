@@ -1,10 +1,5 @@
-import { handle } from "hono/vercel";
-import { loadEnvFile } from "../src/server/core/env";
-import { bootstrapSchema } from "../src/server/db/bootstrap";
-import { createApp } from "../src/server/app";
-
-loadEnvFile();
-await bootstrapSchema();
-const app = createApp();
-
-export default handle(app);
+// Placeholder replaced at build time by `npm run build:api` (esbuild bundle).
+// Keeps the /api route registered before the build output lands.
+export default function handler() {
+  return new Response("API is building. Redeploy if you see this.", { status: 503 });
+}

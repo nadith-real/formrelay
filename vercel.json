@@ -1,9 +1,6 @@
 {
-  "functions": {
-    "api/index.ts": {
-      "includeFiles": "src/**"
-    }
-  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/client",
   "rewrites": [
     { "source": "/f/:slug", "destination": "/api" },
     { "source": "/api/:path*", "destination": "/api" },
