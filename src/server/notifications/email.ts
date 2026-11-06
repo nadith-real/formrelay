@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-import { escapeHtml } from "../core/response.ts";
+import { escapeHtml } from "../core/response";
 
 export type SmtpCredentials = {
   host: string;
