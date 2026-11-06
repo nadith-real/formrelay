@@ -10,7 +10,7 @@
     "dev:api": "tsx watch src/server/index.ts",
     "dev:web": "vite",
     "build": "vite build && npm run build:api",
-    "build:api": "esbuild src/server/adapters/vercel.ts --bundle --platform=node --target=node20 --format=esm --outfile=api/\[\[...path\]\].js --packages=bundle",
+    "build:api": "esbuild src/server/adapters/vercel.ts --bundle --platform=node --target=node20 --format=esm --outfile=api/index.js --packages=bundle",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit",
     "start": "NODE_ENV=production tsx src/server/index.ts",
     "start:node": "NODE_ENV=production node dist/server/index.js",
