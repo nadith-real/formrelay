@@ -1,7 +1,7 @@
 import { and, eq, sql } from "drizzle-orm";
-import { db } from "../db/client.ts";
-import { forms, submissions } from "../db/schema.ts";
-import { newId, newSlug, now } from "../core/ids.ts";
+import { db } from "../db/client";
+import { forms, submissions } from "../db/schema";
+import { newId, newSlug, now } from "../core/ids";
 
 export type FormRecord = typeof forms.$inferSelect;
 
