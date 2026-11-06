@@ -1,16 +1,16 @@
 import type { Context } from "hono";
-import { getFormBySlug } from "../forms/form.service.ts";
-import { createSubmission } from "../submissions/submission.service.ts";
-import { applyValidation, sanitizeSubmission } from "./validator.ts";
-import { isHoneypotTriggered, looksLikeSpam, stripHoneypot } from "../security/honeypot.ts";
-import { corsHeaders, originAllowed } from "../security/cors.ts";
-import { clientKey, rateLimit } from "../security/rate-limit.ts";
-import { parseUserAgent } from "./ua.ts";
-import { clientIp, lookupGeo } from "./geo.ts";
-import { htmlMessage, jsonError, jsonOk, wantsJson } from "./response.ts";
-import { loadConfig } from "./config.ts";
-import { dispatchNotifications, getProjectWebsite } from "../notifications/notification.service.ts";
-import { getProject } from "../projects/project.service.ts";
+import { getFormBySlug } from "../forms/form.service";
+import { createSubmission } from "../submissions/submission.service";
+import { applyValidation, sanitizeSubmission } from "./validator";
+import { isHoneypotTriggered, looksLikeSpam, stripHoneypot } from "../security/honeypot";
+import { corsHeaders, originAllowed } from "../security/cors";
+import { clientKey, rateLimit } from "../security/rate-limit";
+import { parseUserAgent } from "./ua";
+import { clientIp, lookupGeo } from "./geo";
+import { htmlMessage, jsonError, jsonOk, wantsJson } from "./response";
+import { loadConfig } from "./config";
+import { dispatchNotifications, getProjectWebsite } from "../notifications/notification.service";
+import { getProject } from "../projects/project.service";
 
 const RESERVED_FIELDS = new Set(["_gotcha", "_redirect", "_next", "_honeypot"]);
 
