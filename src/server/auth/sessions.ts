@@ -1,10 +1,10 @@
 import { eq, lt } from "drizzle-orm";
 import { randomBytes } from "node:crypto";
-import { db } from "../db/client.ts";
-import { sessions } from "../db/schema.ts";
-import { hashToken } from "../security/encryption.ts";
-import { loadConfig, isProduction } from "../core/config.ts";
-import { newId, now } from "../core/ids.ts";
+import { db } from "../db/client";
+import { sessions } from "../db/schema";
+import { hashToken } from "../security/encryption";
+import { loadConfig, isProduction } from "../core/config";
+import { newId, now } from "../core/ids";
 
 const COOKIE = "fr_session";
 
