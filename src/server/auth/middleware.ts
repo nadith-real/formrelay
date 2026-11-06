@@ -1,8 +1,8 @@
 import { createMiddleware } from "hono/factory";
 import { getCookie } from "hono/cookie";
-import { cookieName, getSession } from "./sessions.ts";
-import { jsonError } from "../core/response.ts";
-import { loadConfig } from "../core/config.ts";
+import { cookieName, getSession } from "./sessions";
+import { jsonError } from "../core/response";
+import { loadConfig } from "../core/config";
 import { createHmac } from "node:crypto";
 
 export const requireAuth = createMiddleware(async (c, next) => {

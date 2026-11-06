@@ -1,7 +1,7 @@
 import { handle } from "hono/netlify";
-import { loadEnvFile } from "../core/env.ts";
-import { bootstrapSchema } from "../db/bootstrap.ts";
-import { createApp } from "../app.ts";
+import { loadEnvFile } from "../core/env";
+import { bootstrapSchema } from "../db/bootstrap";
+import { createApp } from "../app";
 
 loadEnvFile();
 await bootstrapSchema();
