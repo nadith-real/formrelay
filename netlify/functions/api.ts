@@ -1,1 +1,1 @@
-export { default } from "../../src/server/adapters/netlify.ts";
+export { default } from "../../src/server/adapters/netlify";

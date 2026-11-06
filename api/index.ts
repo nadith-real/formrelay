@@ -4,8 +4,25 @@ import { bootstrapSchema } from "../src/server/db/bootstrap";
 import { createApp } from "../src/server/app";
 
 loadEnvFile();
-await bootstrapSchema();
+
+let bootstrapped = false;
+async function ensureBootstrap() {
+  if (bootstrapped) return;
+  await bootstrapSchema();
+  bootstrapped = true;
+}
+
 const app = createApp();
+
+app.use("*", async (c, next) => {
+  try {
+    await ensureBootstrap();
+  } catch (err) {
+    console.error("Schema bootstrap failed:", err);
+  }
+  return next();
+});
+
 const handler = handle(app);
 
 export const GET = handler;
