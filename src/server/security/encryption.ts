@@ -1,5 +1,5 @@
 import { createCipheriv, createDecipheriv, createHash, randomBytes } from "node:crypto";
-import { loadConfig } from "../core/config.ts";
+import { loadConfig } from "../core/config";
 
 function keyBytes(): Buffer {
   return createHash("sha256").update(loadConfig().ENCRYPTION_KEY).digest();
