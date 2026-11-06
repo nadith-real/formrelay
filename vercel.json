@@ -1,10 +1,14 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api" },
-    { "src": "/f/(.*)", "dest": "/api" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "src/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/f/:slug", "destination": "/api" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
