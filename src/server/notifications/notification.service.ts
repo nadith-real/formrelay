@@ -1,10 +1,10 @@
 import { eq, and } from "drizzle-orm";
-import { db } from "../db/client.ts";
-import { notificationLogs, projectIntegrations, projects } from "../db/schema.ts";
-import { decryptSecret, encryptSecret, maskSecret } from "../security/encryption.ts";
-import { newId, now } from "../core/ids.ts";
-import { parseTelegramCredentials, sendTelegramMessage, buildTelegramMessage, testTelegram } from "./telegram.ts";
-import { parseSmtpCredentials, sendEmail, buildEmailHtml, testEmail } from "./email.ts";
+import { db } from "../db/client";
+import { notificationLogs, projectIntegrations, projects } from "../db/schema";
+import { decryptSecret, encryptSecret, maskSecret } from "../security/encryption";
+import { newId, now } from "../core/ids";
+import { parseTelegramCredentials, sendTelegramMessage, buildTelegramMessage, testTelegram } from "./telegram";
+import { parseSmtpCredentials, sendEmail, buildEmailHtml, testEmail } from "./email";
 
 export type IntegrationPublic = {
   provider: string;
