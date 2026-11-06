@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { getCookie } from "hono/cookie";
-import { loginInput } from "../core/validator.ts";
-import { verifyCredentials } from "./authentication.ts";
+import { loginInput } from "../core/validator";
+import { verifyCredentials } from "./authentication";
 import {
   clearSessionCookie,
   cookieName,
@@ -9,12 +9,12 @@ import {
   destroySession,
   getSession,
   sessionCookie,
-} from "./sessions.ts";
-import { csrfTokenFromSession } from "./middleware.ts";
-import { jsonError, jsonOk } from "../core/response.ts";
-import { clientKey, rateLimit } from "../security/rate-limit.ts";
-import { loadConfig } from "../core/config.ts";
-import { clientIp } from "../core/geo.ts";
+} from "./sessions";
+import { csrfTokenFromSession } from "./middleware";
+import { jsonError, jsonOk } from "../core/response";
+import { clientKey, rateLimit } from "../security/rate-limit";
+import { loadConfig } from "../core/config";
+import { clientIp } from "../core/geo";
 
 export const authRoutes = new Hono();
 

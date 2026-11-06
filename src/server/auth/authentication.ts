@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { loadConfig } from "../core/config.ts";
+import { loadConfig } from "../core/config";
 
 let hashedPassword: string | null = null;
 
@@ -12,14 +12,7 @@ async function getHashedPassword(): Promise<string> {
 
 export async function verifyCredentials(username: string, password: string): Promise<boolean> {
   const config = loadConfig();
-  if (username !== config.APP_USERNAME) {
-    await bcrypt.compare(password, await getHashedPassword());
-    return false;
-  }
-  return bcrypt.compare(password, await getHashedPassword());
-}
-
-export function extractCsrf(header: string | undefined, cookie: string | undefined): boolean {
-  if (!header || !cookie) return false;
-  return header === cookie;
+  if (username !== config.APP_USERNAME) return false;
+  const hash = await getHashedPassword();
+  return bcrypt.compare(password, hash);
 }
