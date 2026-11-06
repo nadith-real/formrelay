@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { projectInput } from "../core/validator.ts";
-import { jsonError, jsonOk } from "../core/response.ts";
+import { projectInput } from "../core/validator";
+import { jsonError, jsonOk } from "../core/response";
 import {
   clearProjectSubmissions,
   createProject,
@@ -10,9 +10,9 @@ import {
   listProjects,
   updateProject,
   updateProjectSettings,
-} from "./project.service.ts";
-import { listForms } from "../forms/form.service.ts";
-import { getIntegration, toPublic, upsertIntegration, testIntegration } from "../notifications/notification.service.ts";
+} from "./project.service";
+import { listForms } from "../forms/form.service";
+import { getIntegration, toPublic, upsertIntegration, testIntegration } from "../notifications/notification.service";
 import { z } from "zod";
 
 export const projectRoutes = new Hono();
